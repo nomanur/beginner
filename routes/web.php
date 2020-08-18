@@ -19,22 +19,29 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-	return view('welcome');
-});
+// Route::get('/', function () {
+// 	return view('welcome');
+// });
 
-Route::get('/blog', "BlogController@index")->name('blog');
+// Route::get('/blog', "BlogController@index")->name('blog');
 
-Route::get('/post', "PostController@index");
+// Route::get('/post', "PostController@index");
 
-Route::post('/post', "PostController@store");
+// Route::post('/post', "PostController@store");
 
-//Route::get('/singlepost/{id}', "PostController@single");
-Route::get('/post/{id}', "PostController@edit");
 
-Route::put('postupdate', "PostController@update");
+// Route::get('/post/{id}', "PostController@edit");
 
-Route::get('/post/{id}/delete', "PostController@delete")->name('delete');
+// Route::put('postupdate', "PostController@update");
+
+// Route::get('/post/{id}/delete', "PostController@delete")->name('delete');
+
+//article
+// Route::Resource('/article', 'articleController')->except('index', 'update');
+// Route::Resource('/article', 'articleController')->only('index', 'update');
+Route::Resource('/article', 'articleController');
+
+
 //route
 
 //controller
