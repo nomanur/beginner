@@ -15,6 +15,9 @@
                 <td>Title </td>
                 <td>Desc</td>
                 <td>Created At</td>
+                <td></td>
+                <td></td>
+                <td></td>
             </th>
         </thead>
 
@@ -28,19 +31,42 @@
                 <td><b>{{$article->title}}</b></td>
                 <td>{{$article->description}}</td>
                 <td>{{$article->created_at}}</td>
-                
+                <td><a href="{{route('article.show', $article->id)}}">Show</a></td>
+            <td><a href="{{route('article.edit', $article->id)}}">Edit</a></td>
+            <td><form action="{{route('article.destroy', $article->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <input type="submit" value="DELETE">
+            </form>
+        </td>
                 @elseif($loop->last)
 
                 <td>{{$loop->iteration}}</td>
                 <td><b>{{$article->title}}</b></td>
                 <td>{{$article->description}}</td>
                 <td>{{$article->created_at}}</td>
+                <td><a href="{{route('article.show', $article->id)}}">Show</a></td>
+                <td><a href="{{route('article.edit', $article->id)}}">Edit</a></td>
+                <td><form action="{{route('article.destroy', $article->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="DELETE">
+                </form>
+            </td>
 
                 @else
                 <td>{{$loop->iteration}}</td>
                 <td>{{$article->title}}</td>
                 <td>{{$article->description}}</td>
                 <td>{{$article->created_at}}</td>
+                <td><a href="{{route('article.show', $article->id)}}">Show</a></td>
+                <td><a href="{{route('article.edit', $article->id)}}">Edit</a></td>
+                <td><form action="{{route('article.destroy', $article->id)}}" method="POST">
+                    @csrf
+                    @method('DELETE')
+                    <input type="submit" value="DELETE">
+                </form>
+            </td>
                 @endif
             </tr>
 

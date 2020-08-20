@@ -42,6 +42,10 @@ use Illuminate\Support\Facades\Route;
 Route::Resource('/article', 'articleController');
 
 
+// Route::get('/article', 'articleController@index')->name('article.index');
+// Route::post('/article', 'articleController@store')->name('article.index');
+// Route::delete('/article/{id}', 'articleController@destroy')->name('article.destroy');
+
 //route
 
 //controller
