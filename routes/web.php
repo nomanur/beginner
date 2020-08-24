@@ -1,5 +1,6 @@
 <?php
 
+use App\Event\TestEvent;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,6 +42,12 @@ use Illuminate\Support\Facades\Route;
 // Route::Resource('/article', 'articleController')->only('index', 'update');
 Route::Resource('/article', 'articleController');
 
+Route::get('/admin', function () {
+    return view('admin.index');
+});
+
+Route::get('/admin/user', 'UserController@index');
+
 
 // Route::get('/article', 'articleController@index')->name('article.index');
 // Route::post('/article', 'articleController@store')->name('article.index');
@@ -53,3 +60,7 @@ Route::Resource('/article', 'articleController');
 //method
 
 //model -  connect to database
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
