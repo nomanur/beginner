@@ -97,11 +97,12 @@
   
   let btn = document.getElementsByClassName('save')[0],
       table = document.getElementById('tbody'),
+      modal = document.getElementsByClassName('modal'),
       id = '',
       name = '',
       email='',
       phone ='';
-    
+      
   btn.addEventListener('click', save);
 
   function save(e){
@@ -121,6 +122,8 @@
       console.log(response);
     }).fail(function(error){
       console.log(error);
+    }).always(function(){
+      $('#defaultModal').modal('hide');
     })
   }
 
