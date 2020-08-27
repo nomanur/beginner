@@ -1,6 +1,7 @@
 <?php
 
 use App\Event\TestEvent;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,7 +48,7 @@ Route::get('/admin', function () {
 });
 
 Route::get('/admin/user', 'UserController@index');
-
+Route::post('/admin/user', 'UserController@store')->name('user.create');
 
 // Route::get('/article', 'articleController@index')->name('article.index');
 // Route::post('/article', 'articleController@store')->name('article.index');

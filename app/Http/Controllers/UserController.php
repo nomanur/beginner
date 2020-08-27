@@ -13,6 +13,10 @@ class UserController extends Controller
 		$user = User::all();
 
 		return view('admin.user')->withUsers($user);
+	}
 
+	public function store(Request $request)
+	{
+		return $request;
 	}
 }
