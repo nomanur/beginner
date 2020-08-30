@@ -15,8 +15,19 @@ class UserController extends Controller
 		return view('admin.user')->withUsers($user);
 	}
 
-	public function store(Request $request)
+	public function update(Request $request)
 	{
-		return $request;
+		
+		$user = User::findOrFail($request->id);
+		// $rt = $user->update([
+		// 	'name' => $request->name,
+		// 	'email' => $request->email,
+		// 	'phone' => $request->phone,
+			
+		// ]);
+		$rt = $user->update($request->all());
+		return $rt;
+		
+		return redirect('admin/user');
 	}
 }

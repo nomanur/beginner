@@ -13,8 +13,7 @@
 <link rel="stylesheet" href='{{asset("assets/plugins/charts-c3/plugin.css")}}'/>
 
 <link rel="stylesheet" href='{{asset("assets/plugins/morrisjs/morris.min.css")}}' />
-
-
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
 <link rel="stylesheet" href="{{asset('assets/css/style.min.css')}}">
 
 
@@ -609,7 +608,7 @@
     </div>
 </section>
 
-@stack('script')
+
 
 <!-- Jquery Core Js --> 
 <script src="{{asset('assets/bundles/libscripts.bundle.js')}}"></script>  
@@ -624,7 +623,7 @@
 
 
 
-
+@stack('script')
 
 
 

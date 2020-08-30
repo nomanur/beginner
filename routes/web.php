@@ -49,6 +49,7 @@ Route::get('/admin', function () {
 
 Route::get('/admin/user', 'UserController@index');
 Route::post('/admin/user', 'UserController@store')->name('user.create');
+Route::post('/admin/user/update', 'UserController@update')->name('user.update');
 
 // Route::get('/article', 'articleController@index')->name('article.index');
 // Route::post('/article', 'articleController@store')->name('article.index');

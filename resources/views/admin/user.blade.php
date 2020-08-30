@@ -55,8 +55,8 @@
           <div class="modal-header">
               <h4 class="title" id="defaultModalLabel">Add Blog</h4>
           </div>
-          <form action="" method="POST">
-            @csrf
+          
+            
             <div class="modal-body">
               <div class="input-group mb-3">
                   <input type="text" name="name" class="form-control timepicker" placeholder="Please input title...">
@@ -76,23 +76,26 @@
                 <button type="submit" class="btn btn-default btn-round waves-effect save">SAVE CHANGES</button>
                 <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">CLOSE</button>
             </div>
-          </form>
+          
       </div>
   </div>
 </div>
+
+
 
 <script
   src="https://code.jquery.com/jquery-3.5.1.min.js"
   integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
   crossorigin="anonymous"></script>
-<script>
+
+ <script type="text/javascript">
+
   document.addEventListener('DOMContentLoaded',function(){
       $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
-
   });
   
   let btn = document.getElementsByClassName('save')[0],
@@ -103,13 +106,22 @@
       email='',
       phone ='';
       
+  btn.addEventListener('click', modalEvent);
+
+  function modalEvent(){
+      name  = document.querySelector('input[name=name]').value;
+      email = document.querySelector('input[name=email]').value;
+      phone = document.querySelector('input[name=phone]').value;
+  }
+
+
   btn.addEventListener('click', save);
 
   function save(e){
     e.preventDefault();
     //console.log(e);
     $.ajax({
-      url:"{{route('user.create')}}",
+      url:"{{route('user.update')}}",
       method: 'POST',
       dataType:'JSON',
       data: {
@@ -141,5 +153,7 @@
   });
 
 </script>
+
+
 
 @endsection
